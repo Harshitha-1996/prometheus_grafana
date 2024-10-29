@@ -136,12 +136,9 @@ scrape_configs:
 
   # Node Exporter scrape config
   - job_name: 'node-exporter'
-    scrape_interval: 5s
-    dns_sd_configs:
-      - names:
-          - 'tasks.node-exporter'
-        type: 'A'
-        port: 9100
+    static_configs:
+      - targets: ['13.233.156.77:9100']
+
 
   - job_name: 'node'
     static_configs:
